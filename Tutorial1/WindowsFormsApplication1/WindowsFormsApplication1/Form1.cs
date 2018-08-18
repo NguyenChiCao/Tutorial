@@ -19,27 +19,31 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender , EventArgs e)
         {
-            string myString = "Nguyen Chi Cao";
+            string myString = "aaabcbaaa";
             char[] myArr = myString.ToArray();
-            int wordCounter = 0;
-            bool isWord = false;
-            for (int i = 0; i < myArr.Count(); i++)
+            bool Palindrome = false;
+            for (int i = 0; i < myArr.Count()/2; i++)
             {
-                if (myArr[i] != ' ')
+                if (myArr[i] == myArr[myArr.Count() - i - 1])
                 {
-                    if (!isWord)
-                    {
-                        wordCounter++;
-                        isWord = true;
-                    }
+                    Palindrome = true;
+                    continue;
                 }
                 else
                 {
-                    isWord = false;
+                    Palindrome = false;
+                    break;
                 }
             }
-
-            MessageBox.Show(wordCounter.ToString() , "Number of word");
+            if (Palindrome)
+            {
+                MessageBox.Show("This string is a Palindrome string");
+            }
+            else
+            {
+                MessageBox.Show("This string is not a Palindrome string");
+            }
+            
         }
     }
 }
