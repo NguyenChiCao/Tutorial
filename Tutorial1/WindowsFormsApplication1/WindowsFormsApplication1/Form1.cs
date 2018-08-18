@@ -32,6 +32,7 @@ namespace WindowsFormsApplication1
                 else
                 {
                     Palindrome = false;
+                    string a = "test";
                     break;
                 }
             }
