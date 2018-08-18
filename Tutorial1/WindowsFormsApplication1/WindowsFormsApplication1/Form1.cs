@@ -16,5 +16,30 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender , EventArgs e)
+        {
+            string myString = "Nguyen Chi Cao";
+            char[] myArr = myString.ToArray();
+            int wordCounter = 0;
+            bool isWord = false;
+            for (int i = 0; i < myArr.Count(); i++)
+            {
+                if (myArr[i] != ' ')
+                {
+                    if (!isWord)
+                    {
+                        wordCounter++;
+                        isWord = true;
+                    }
+                }
+                else
+                {
+                    isWord = false;
+                }
+            }
+
+            MessageBox.Show(wordCounter.ToString() , "Number of word");
+        }
     }
 }
